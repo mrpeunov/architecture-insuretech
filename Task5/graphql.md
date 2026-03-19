@@ -1,0 +1,37 @@
+# Задание 5. Проектирование GraphQL API
+
+```graphql
+schema {
+  query: Query
+}
+
+type Query {
+  client(id: ID!): Client
+  clientDocuments(id: ID!): [Document]
+  clientRelatives(id: ID!): [Relative]
+}
+
+type Client {
+  id: ID!
+  name: String
+  age: Int
+
+  documents: [Document]
+  relatives: [Relative]
+}
+
+type Document {
+  id: ID!
+  type: String
+  number: String
+  issueDate: String
+  expiryDate: String
+}
+
+type Relative {
+  id: ID!
+  relationType: String
+  name: String
+  age: Int
+}
+```
